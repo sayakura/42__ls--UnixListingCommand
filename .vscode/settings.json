@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "ft_ls.h": "c",
+        "stat.h": "c",
+        "stdio.h": "c",
+        "unistd.h": "c"
+    }
+}
