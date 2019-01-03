@@ -6,7 +6,7 @@
 #    By: qpeng <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/12 01:46:46 by qpeng             #+#    #+#              #
-#    Updated: 2018/11/25 05:40:58 by qpeng            ###   ########.fr        #
+#    Updated: 2019/01/02 19:18:16 by qpeng            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,6 +83,7 @@ SRCS = ft_strrchr.c\
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
+	@printf '\e[31mBuilding the libft.a...\e[0m🤔\n';
 
 $(NAME): $(OBJS)
 	@ar rc $(NAME) $(OBJS)
@@ -90,13 +91,13 @@ $(NAME): $(OBJS)
 	@echo "$(GREEN)LIBFT ✓ Created libft.a"
 
 $(OBJS): $(SRCS)
-	gcc $(CFLAGS) -I=$(HEADER) $(SRCS)
+	@gcc $(CFLAGS) -I=$(HEADER) $(SRCS)
 
 clean:
-	/bin/rm -f $(OBJS)
+	@/bin/rm -f $(OBJS)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
 

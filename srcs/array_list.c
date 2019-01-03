@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "array_list.h"
+#include "ft_ls.h"
 
 void	array_list_init(t_array_list **al)
 {
