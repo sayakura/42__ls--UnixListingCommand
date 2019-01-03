@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_headers.h                                       :+:      :+:    :+:   */
+/*   array_list.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qpeng <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/18 23:42:10 by qpeng             #+#    #+#             */
-/*   Updated: 2018/09/23 23:55:10 by qpeng            ###   ########.fr       */
+/*   Created: 2019/01/02 18:09:04 by qpeng             #+#    #+#             */
+/*   Updated: 2019/01/02 18:09:05 by qpeng            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
+#ifndef ARRAY_LIST_H
+# define ARRAY_LIST_H
 
-# define FT_PRINTF_H
+typedef struct	s_array_list{
+	void		**arr;
+	int			cap;
+	int			len;
+}				t_array_list;
 
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
-# define ABS(a) (a < 0) ? -a : a
+# define ARRAY_LIST(funct) array_list_##funct
 
-int		b_printf(const char *restrict format, ...);
+void			array_list_init(t_array_list **al);
+void			array_list_push(t_array_list *al, void *data);
+void			array_list_destroy(t_array_list **al,
+void (*destroyer)(void **));
 #endif
